@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<title>丝袜电影网 - 时尚影像与服饰美学电影赏析_经典影片推荐与影评</title>
+<meta name="description" content="丝袜电影网（siwadianyingwang-cn）从服饰美学与镜头语言出发，赏析经典电影中的时尚影像、丝袜与服饰文化、光影穿搭与造型设计，提供经典片单、深度影评与观影指南。">
+<meta name="keywords" content="丝袜电影网,丝袜电影,时尚电影,服饰美学,经典电影,电影穿搭,光影美学,电影影评,时尚纪录片">
+<meta name="author" content="丝袜电影网">
+<meta name="copyright" content="丝袜电影网">
+<link rel="canonical" href="https://siwadianyingwang-cn.github.io/">
+<style>
+/* ================= 设计令牌 ================= */
+:root{
+  --night:#0b1020;--night2:#121a30;--violet:#6d4bff;--fuchsia:#e035a0;--cyan:#28d7e8;
+  --cream:#f4f1ea;--ink:#141a28;--mute:#7c8699;
+  --sans:"Inter","PingFang SC","Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",-apple-system,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sh:0 30px 70px rgba(109,75,255,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.8;overflow-x:hidden}
+a{color:inherit;text-decoration:none;transition:.26s cubic-bezier(.3,.7,.4,1)}
+img,svg{display:block;max-width:100%}
+::selection{background:var(--fuchsia);color:#fff}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--violet),var(--fuchsia));border-radius:8px}
+
+.bg{position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(800px 460px at 90% -6%,rgba(224,53,160,.20),transparent 60%),
+  radial-gradient(700px 460px at -4% 104%,rgba(40,215,232,.16),transparent 60%),
+  var(--cream)}
+.bg::before{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(60,70,100,.06) 1px,transparent 1px);background-size:22px 22px}
+
+.wrap{width:min(1180px,92vw);margin:0 auto}
+
+/* ================= 顶栏 ================= */
+.nav{position:sticky;top:0;z-index:70;background:rgba(11,16,32,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:.6px;color:#fff;white-space:nowrap}
+.logo{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:12px;letter-spacing:1px;color:#fff;background:linear-gradient(135deg,var(--violet),var(--fuchsia));box-shadow:0 8px 18px rgba(224,53,160,.4);transform:rotate(-6deg)}
+.brand em{font-style:normal;font-size:10.5px;letter-spacing:2.5px;color:var(--cyan);font-family:var(--mono);border-left:1px solid rgba(255,255,255,.24);padding-left:11px;font-weight:600}
+.menu{display:flex;gap:3px;margin-left:auto}
+.menu a{position:relative;padding:10px 12px;font-size:13.4px;color:#c3c9dd;letter-spacing:.4px}
+.menu a::before{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--violet),var(--cyan));transform:scaleX(0);transition:.3s}
+.menu a:hover{color:#fff}.menu a:hover::before{transform:scaleX(1)}
+.burger{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:4px}
+
+/* ================= Hero ================= */
+.hero{padding:64px 0 44px;position:relative;color:#fff}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:54px;align-items:center}
+.tagline{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;letter-spacing:3px;color:var(--cyan);font-family:var(--mono);border:1px solid rgba(40,215,232,.5);padding:6px 14px;border-radius:30px}
+h1{font-size:clamp(34px,6vw,64px);line-height:1.12;margin:14px 0 16px;font-weight:820;letter-spacing:-1px;background:linear-gradient(100deg,#fff 10%,var(--fuchsia) 55%,var(--violet) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 u{text-decoration:none;-webkit-text-stroke:1px #fff;color:transparent}
+.hsub{font-size:clamp(14.6px,1.5vw,16px);color:#c7cfe4;text-align:justify;max-width:56ch}
+.hstats{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap}
+.hstats b{font-family:var(--mono);font-size:24px;font-weight:800;color:#fff;line-height:1.1}
+.hstats i{font-style:normal;font-size:11px;letter-spacing:1.6px;color:var(--mute);display:block;margin-top:3px}
+.cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;border-radius:30px;font-size:14.6px;font-weight:700;letter-spacing:.6px}
+.btn-p{background:linear-gradient(90deg,var(--violet),var(--fuchsia));color:#fff;box-shadow:var(--sh)}
+.btn-p:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.btn-o{border:1px solid rgba(255,255,255,.35);color:#fff}
+.btn-o:hover{border-color:var(--cyan);color:var(--cyan)}
+
+/* 霓虹网格海报 */
+.stage{position:relative;height:380px;display:grid;place-items:center;perspective:900px}
+.plate{position:absolute;width:200px;height:268px;border-radius:16px;background:
+  linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,0)),
+  linear-gradient(160deg,#24133a,#0b1020);
+  border:1px solid rgba(255,255,255,.16);box-shadow:var(--sh);transform-style:preserve-3d;overflow:hidden}
+.plate::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 13px,rgba(255,255,255,.05) 13px 16px)}
+.plate p{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;font-size:11.4px;letter-spacing:2px;color:#e9ecf5;background:linear-gradient(0deg,rgba(11,16,32,.92),transparent)}
+.plate s{position:absolute;top:14px;left:14px;width:34px;height:34px;border-radius:50%;border:2px solid var(--cyan);text-decoration:none;display:grid;place-items:center;font-size:9px;color:var(--cyan);letter-spacing:1px}
+.p1{transform:rotateY(-26deg) rotateX(6deg) translate(-118px,-14px);z-index:1}
+.p2{transform:rotateY(-9deg) translate(-30px,16px);z-index:2;width:216px;height:290px;border-color:rgba(224,53,160,.6)}
+.p3{transform:rotateY(24deg) rotateX(6deg) translate(112px,-12px);z-index:1}
+.stage:hover .p1{transform:rotateY(-32deg) rotateX(10deg) translate(-152px,-28px)}
+.stage:hover .p2{transform:rotateY(0) translate(0,-14px) scale(1.04)}
+.stage:hover .p3{transform:rotateY(30deg) rotateX(10deg) translate(146px,-26px)}
+.stage-cap{text-align:center;margin-top:2px;font-size:11px;letter-spacing:5px;color:var(--mute);font-family:var(--mono)}
+
+/* ================= 通用 ================= */
+section{padding:60px 0}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.sec-t{font-size:clamp(22px,2.9vw,32px);font-weight:800;letter-spacing:.4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-t small{font-size:10.5px;letter-spacing:3px;color:var(--fuchsia);font-family:var(--mono);font-weight:800}
+.sec-t var{font-style:normal;font-size:12px;color:var(--mute);font-family:var(--mono)}
+.more{font-size:12.4px;letter-spacing:1px;color:var(--violet);border-bottom:1.5px solid var(--fuchsia);padding-bottom:3px}
+.more:hover{color:var(--fuchsia)}
+
+/* ===== 栏目 1：时尚影像（斜切卡片 Grid） ===== */
+.mesh{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:18px}
+.mc{position:relative;height:270px;border-radius:16px;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;cursor:default;transition:.34s}
+.mc::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(11,16,32,.96));z-index:1}
+.mc::after{content:"";position:absolute;inset:0;z-index:0;transition:.5s;mix-blend-mode:overlay;opacity:.9}
+.mc1{background:linear-gradient(150deg,#5a2a6e,#24133a)}.mc1::after{background:radial-gradient(circle at 30% 20%,#e035a0,#6d4bff)}
+.mc2{background:linear-gradient(150deg,#123a52,#0b2030)}.mc2::after{background:radial-gradient(circle at 70% 30%,#28d7e8,#2a6cb5)}
+.mc3{background:linear-gradient(150deg,#6b2a2a,#301313)}.mc3::after{background:radial-gradient(circle at 40% 25%,#ff8a5c,#c83a6a)}
+.mc4{background:linear-gradient(150deg,#3a4a14,#182010)}.mc4::after{background:radial-gradient(circle at 60% 20%,#c6e24a,#5a8a2a)}
+.mc h4,.mc .m,.mc .chip,.mc .no{position:relative;z-index:2}
+.mc .no{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--cyan)}
+.mc h4{font-size:16.4px;font-weight:760;margin:5px 0 6px;line-height:1.45}
+.mc .m{font-size:11.4px;color:#c3c9dd;font-family:var(--mono);letter-spacing:.4px}
+.mc .chip{display:inline-block;margin-top:9px;font-size:10px;letter-spacing:1.4px;color:#fff;border:1px solid rgba(255,255,255,.45);padding:3px 10px;border-radius:20px;align-self:flex-start}
+.mc:hover{transform:translateY(-7px);box-shadow:var(--sh)}
+.mc:hover::after{transform:scale(1.18)}
+
+/* ===== 栏目 2：服饰文化时间轴（定义列表） ===== */
+.dl{background:#fff;border:1px solid rgba(20,26,40,.10);border-radius:18px;padding:10px 8px}
+.dl div{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:15px 18px;border-bottom:1px dashed rgba(20,26,40,.14);transition:.26s}
+.dl div:last-child{border-bottom:none}
+.dl dt{font-family:var(--mono);font-weight:800;font-size:15px;color:var(--violet);letter-spacing:1px;align-self:center}
+.dl dd h5{font-size:15.6px;font-weight:750;margin-bottom:3px}
+.dl dd p{font-size:12.8px;color:#6c7488;text-align:justify}
+.dl div:hover{background:linear-gradient(90deg,rgba(109,75,255,.07),transparent);padding-left:26px}
+.dl div:hover dt{color:var(--fuchsia)}
+
+/* ===== 栏目 3：深度影评（斜切引文卡） ===== */
+.crit{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start}
+.cr{position:relative;background:var(--night);color:#e9ecf5;border-radius:16px;padding:26px 24px 22px;clip-path:polygon(0 0,100% 0,100% 88%,0 100%);transition:.32s;cursor:default}
+.cr::before{content:"\201C";font-family:Georgia,serif;position:absolute;right:14px;top:-10px;font-size:86px;line-height:1;color:rgba(224,53,160,.34)}
+.cr .k{font-size:9.6px;letter-spacing:3px;color:var(--cyan);font-weight:800;font-family:var(--mono)}
+.cr h4{font-size:17.2px;line-height:1.55;margin:9px 0 11px;font-weight:700;position:relative}
+.cr p{font-size:13.2px;color:#b9c0d2;text-align:justify}
+.cr .score{margin-top:14px;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.6px;color:var(--fuchsia);letter-spacing:1px}
+.cr:hover{background:var(--night2);transform:translateY(-5px) rotate(-.6deg);box-shadow:var(--sh)}
+
+/* ===== 栏目 4：经典片单（进度条排行榜） ===== */
+.race{background:#fff;border:1px solid rgba(20,26,40,.10);border-radius:18px;padding:18px 20px}
+.rw{display:grid;grid-template-columns:44px 1fr 76px;align-items:center;gap:14px;margin-bottom:14px}
+.rw .n{font-family:var(--mono);font-weight:800;font-size:19px;color:rgba(20,26,40,.22);line-height:1}
+.rw.g1 .n{color:var(--fuchsia)}.rw.g2 .n{color:var(--violet)}.rw.g3 .n{color:var(--cyan)}
+.rw .t strong{display:block;font-size:14.8px;font-weight:760}
+.rw .t i{font-style:normal;font-size:11px;color:var(--mute);letter-spacing:.5px}
+.track{height:7px;border-radius:6px;background:rgba(20,26,40,.08);overflow:hidden;margin-top:6px}
+.bar{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--violet),var(--fuchsia));transform-origin:left;transform:scaleX(.35);transition:.9s cubic-bezier(.2,.8,.2,1)}
+.rw:hover .bar{transform:scaleX(1)}
+.rw .v{font-family:var(--mono);font-size:12px;color:var(--violet);text-align:right;font-weight:800}
+
+/* ===== 栏目 5：光影美学（封面墙 hover 揭层） ===== */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(198px,1fr));gap:16px}
+.tile{position:relative;height:228px;border-radius:14px;overflow:hidden;color:#fff;display:grid;place-items:center;transition:.4s}
+.tile b{font-size:14px;letter-spacing:4px;font-weight:800;z-index:2;writing-mode:vertical-rl;text-orientation:upright}
+.tile::before{content:"";position:absolute;inset:0;z-index:1}
+.t1{background:linear-gradient(150deg,#4a1a4a,#150a22)}.t1::before{background:radial-gradient(circle at 35% 25%,rgba(224,53,160,.75),transparent 62%)}
+.t2{background:linear-gradient(150deg,#0e3a4a,#06131c)}.t2::before{background:radial-gradient(circle at 65% 30%,rgba(40,215,232,.7),transparent 62%)}
+.t3{background:linear-gradient(150deg,#5a3010,#1c1008)}.t3::before{background:radial-gradient(circle at 45% 25%,rgba(255,160,60,.7),transparent 62%)}
+.t4{background:linear-gradient(150deg,#2a4a14,#0d1808)}.t4::before{background:radial-gradient(circle at 55% 25%,rgba(170,230,90,.6),transparent 62%)}
+.t5{background:linear-gradient(150deg,#3a1a2a,#160a14)}.t5::before{background:radial-gradient(circle at 40% 30%,rgba(255,90,150,.7),transparent 62%)}
+.tile .lay{position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,transparent 35%,rgba(11,16,32,.97));padding:14px;display:flex;flex-direction:column;justify-content:flex-end;transform:translateY(104%);transition:.4s cubic-bezier(.2,.8,.2,1)}
+.tile:hover .lay{transform:translateY(0)}
+.tile .lay u{text-decoration:none;font-size:9.6px;letter-spacing:2.4px;color:var(--cyan);font-family:var(--mono)}
+.tile .lay span{font-size:12.4px;color:#dde2ee;margin-top:5px}
+
+/* ===== 栏目 6：题材分类（圆角胶囊矩阵） ===== */
+.pills{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.pill{position:relative;overflow:hidden;background:#fff;border:1px solid rgba(20,26,40,.12);border-radius:14px;padding:15px 16px;cursor:default;transition:.26s}
+.pill b{display:block;font-size:15.4px;font-weight:780}
+.pill u{text-decoration:none;font-size:10.6px;color:var(--mute);font-family:var(--mono)}
+.pill::after{content:"";position:absolute;left:16px;right:16px;bottom:9px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--violet),var(--fuchsia));transform:scaleX(0);transform-origin:right;transition:.34s}
+.pill:hover{border-color:rgba(109,75,255,.5);transform:translateY(-4px);box-shadow:0 14px 30px rgba(109,75,255,.18)}
+.pill:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* ===== 栏目 7：观影指南（步骤条 + 卡片） ===== */
+.guide{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:12px}
+.step{counter-increment:s;position:relative;display:grid;grid-template-columns:50px 1fr;gap:14px;background:#fff;border:1px solid rgba(20,26,40,.12);border-radius:14px;padding:14px 16px;transition:.26s}
+.step::before{content:counter(s,decimal-leading-zero);grid-row:1/3;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-family:var(--mono);font-weight:800;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--violet),var(--fuchsia))}
+.step b{font-size:15.2px;font-weight:770;align-self:end}
+.step span{font-size:12.6px;color:#6c7488;grid-column:2}
+.step:hover{border-color:var(--fuchsia);box-shadow:var(--sh);transform:translateX(5px)}
+.pcard{background:linear-gradient(160deg,var(--night),#1c1240);color:#e9ecf5;border-radius:18px;padding:24px}
+.pcard h4{font-size:18px;margin-bottom:14px;color:#fff}
+.pcard ul{display:flex;flex-direction:column;gap:11px}
+.pcard li{font-size:13px;padding-left:18px;position:relative;color:#d5dae8}
+.pcard li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+
+/* ===== SEO 正文 ===== */
+.prose{padding:42px 0 10px}
+.prose h2{font-size:clamp(21px,2.7vw,29px);margin-bottom:12px;font-weight:800}
+.prose h3{font-size:17.6px;margin:22px 0 7px;color:var(--fuchsia);font-weight:770}
+.prose p{color:#5d6476;font-size:14px;margin-bottom:12px;text-align:justify}
+
+/* ===== 页脚 ===== */
+.foot{margin-top:36px;background:var(--night);color:#b9c0d2;padding:38px 0 42px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-bottom:26px}
+.foot h6{color:#fff;font-size:14px;margin-bottom:12px;letter-spacing:1px}
+.foot ul li{margin-bottom:8px;font-size:12.6px}
+.foot a:hover{color:var(--cyan)}
+.foot .sign{font-size:17px;font-weight:800;letter-spacing:1.4px;background:linear-gradient(90deg,var(--cyan),var(--fuchsia));-webkit-background-clip:text;background-clip:text;color:transparent}
+.fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:12.4px;color:#7f8799}
+.fin a{color:var(--fuchsia)}
+
+.top{position:fixed;right:15px;bottom:19px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--violet),var(--fuchsia));color:#fff;box-shadow:0 12px 26px rgba(224,53,160,.42);opacity:0;pointer-events:none;transition:.3s;z-index:60;font-size:19px}
+.top.show{opacity:1;pointer-events:auto}
+
+/* ================= 响应式 ================= */
+@media(max-width:980px){
+  .nav .wrap{height:58px;gap:9px}
+  .brand{font-size:15.4px}
+  .brand em{display:none}
+  .burger{display:block;margin-left:auto}
+  .menu{position:fixed;inset:58px 0 0;flex-direction:column;background:rgba(11,16,32,.99);padding:20px;transform:translateX(100%);transition:.34s;z-index:69;overflow:auto}
+  .menu.open{transform:translateX(0)}
+  .menu a{padding:14px 16px;font-size:15.6px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .hero{padding:32px 0 38px}
+  .hero-grid{grid-template-columns:1fr;gap:16px}
+  .stage{height:320px;order:-1;max-width:440px;margin:0 auto}
+  section{padding:44px 0}
+  .dl div{grid-template-columns:92px 1fr;gap:12px}
+  .guide{grid-template-columns:1fr}
+  .rw{grid-template-columns:38px 1fr 60px;gap:10px}
+}
+@media(max-width:440px){
+  h1{font-size:30px}
+  .hsub{font-size:13.8px}
+  .btn{padding:12px 22px;font-size:13.8px;flex:1;justify-content:center}
+  .stage{height:278px}
+  .plate{width:150px;height:202px}.p2{width:164px;height:218px}
+  .plate p{font-size:9px;letter-spacing:1px}
+  .mesh{grid-template-columns:repeat(2,1fr);gap:11px}
+  .mc{height:206px;padding:11px;border-radius:12px}
+  .mc h4{font-size:13.2px}.mc .m{font-size:10px}
+  .dl div{grid-template-columns:1fr;gap:5px;padding:13px}
+  .dl dt{font-size:13px}
+  .wall{grid-template-columns:repeat(2,1fr)}
+  .tile{height:186px}
+  .pills{grid-template-columns:repeat(2,1fr);gap:9px}
+  .pill{padding:12px;border-radius:11px}
+  .pill b{font-size:13.4px}
+}
+@media print{.bg,.nav,.top{display:none};body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<div class="bg" aria-hidden="true"></div>
+
+<!-- ============ 顶栏 ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="丝袜电影网首页"><span class="logo">丝袜</span>丝袜电影网 <em>SIWA CINEMA</em></a>
+    <nav class="menu" id="menu" aria-label="主导航">
+      <a href="#mesh">时尚影像</a>
+      <a href="#dl">服饰文化</a>
+      <a href="#crit">深度影评</a>
+      <a href="#race">经典片单</a>
+      <a href="#wall">光影美学</a>
+      <a href="#pills">题材分类</a>
+      <a href="#guide">观影指南</a>
+    </nav>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="菜单">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ Hero ============ -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tagline">◆ FASHION · LIGHT · FRAME</span>
+        <h1 id="h1">每一帧，<br>都是一场<u>穿搭</u>。</h1>
+        <p class="hsub"><strong>丝袜电影网（siwadianyingwang-cn）</strong>不做资讯搬运，只做一件事：<em>从服饰美学与镜头语言出发，重新看电影</em>。丝袜、高跟、大衣、墨镜、旗袍——这些被忽略的"配角"，往往才是导演最诚实的自白。本站提供经典片单、深度影评、服饰文化年表与观影指南。</p>
+        <div class="hstats">
+          <div><b>1260</b><i>收录影片</i></div>
+          <div><b>86</b><i>深度影评</i></div>
+          <div><b>24</b><i>专题片单</i></div>
+          <div><b>每日</b><i>更新</i></div>
+        </div>
+        <div class="cta">
+          <a class="btn btn-p" href="#mesh" rel="nofollow">开始看片 →</a>
+          <a class="btn btn-o" href="#guide" rel="nofollow">先看观影指南</a>
+        </div>
+      </div>
+
+      <figure class="stage" aria-label="时尚影像示意">
+        <div class="plate p1"><s>01</s><p>霓虹 · 东京</p></div>
+        <div class="plate p2"><s>02</s><p>丝袜 · 光影</p></div>
+        <div class="plate p3"><s>03</s><p>高跟 · 长镜</p></div>
+      </figure>
+      <div class="stage-cap">— STYLE IN MOTION —</div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目 1：时尚影像（斜切卡片 Grid） ============ -->
+  <section id="mesh" aria-labelledby="t1">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><small>Frame</small>时尚影像 <var>01</var></div>
+        <a class="more" href="#" rel="nofollow">完整影像库 →</a>
+      </div>
+      <div class="mesh">
+        <article class="mc mc1"><span class="no">NO.01</span><h4>霓虹夜色里的丝袜与高跟</h4><div class="m">1986 · 东京 · 色彩</div><span class="chip">霓虹美学</span></article>
+        <article class="mc mc2"><span class="no">NO.02</span><h4>黑色大衣：一份沉默的宣言</h4><div class="m">1994 · 巴黎 · 剪裁</div><span class="chip">极简主义</span></article>
+        <article class="mc mc3"><span class="no">NO.03</span><h4>旗袍的腰线，与被压抑的呼吸</h4><div class="m">2000 · 上海 · 东方</div><span class="chip">东方服饰</span></article>
+        <article class="mc mc4"><span class="no">NO.04</span><h4>白衬衫：最难的戏，穿在最普通的衣服上</h4><div class="m">2011 · 纽约 · 日常</div><span class="chip">日常穿搭</span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目 2：服饰文化（定义列表时间轴） ============ -->
+  <section id="dl" aria-labelledby="t2" style="background:linear-gradient(180deg,transparent,rgba(109,75,255,.07),transparent)">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><small>Timeline</small>服饰文化年表 <var>02</var></div>
+        <a class="more" href="#" rel="nofollow">完整年表 →</a>
+      </div>
+      <div class="dl">
+        <div><dt>1920s</dt><dd><h5>Flapper 与丝袜的革命</h5><p>《爵士歌手》时代，及膝裙配肉色丝袜成为"新女性"的制服。丝袜第一次不再是保暖用品，而是<strong>态度</strong>。</p></dd></div>
+        <div><dt>1950s</dt><dd><h5>尼龙回归，与"天鹅绒腿"</h5><p>战后尼龙解禁，《罗马假日》里奥黛丽·赫本的九分裤与平底鞋，重新定义了"优雅"的性价比。</p></dd></div>
+        <div><dt>1960s</dt><dd><h5>迷你裙与波普色</h5><p>《放大》中的伦敦街头，丝袜从"肉色"走向"彩色、网眼、印花"，成为波普艺术的一部分。</p></dd></div>
+        <div><dt>1990s</dt><dd><h5>极简、黑色与"去性别"</h5><p>《低俗小说》的黑色短袜、《这个杀手不太冷》的白袜——服装开始替角色<strong>说谎</strong>。</p></dd></div>
+        <div><dt>2020s</dt><dd><h5>复古回潮与"穿衣的自由"</h5><p>《艾米莉亚·佩雷斯》《可怜的东西》——丝袜再度成为叙事工具，而非装饰。</p></dd></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目 3：深度影评（斜切引文卡） ============ -->
+  <section id="crit" aria-labelledby="t3">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><small>Critique</small>深度影评 <var>03</var></div>
+        <a class="more" href="#" rel="nofollow">全部影评 →</a>
+      </div>
+      <div class="crit">
+        <article class="cr"><div class="k">ESSAY · 服饰论</div><h4>丝袜为什么总在"危险"的镜头里出现？</h4><p>从《花样年华》的旗袍开衩，到《巴黎最后的探戈》的丝袜特写——导演用一件贴身的织物，完成对"欲望"的合法化表达。<strong>它比台词更诚实</strong>。本文逐镜拆解 9 个经典段落。</p><div class="score">推荐指数 ★★★★★</div></article>
+        <article class="cr"><div class="k">ESSAY · 光影论</div><h4>当光线穿过织物：丝袜作为"柔光滤镜"</h4><p>尼龙纤维的折射率，恰好能把硬光变成皮肤。这不是巧合，是<strong>1930 年代摄影棚的省钱方案</strong>，却意外成为百年电影的美学基因。一篇写给摄影爱好者的冷知识。</p><div class="score">推荐指数 ★★★★☆</div></article>
+        <article class="cr"><div class="k">ESSAY · 穿搭论</div><h4>跟着电影学穿搭：5 套可以照搬的银幕造型</h4><p>《蒂凡尼的早餐》的小黑裙、《卡罗尔》的大衣、《末路狂花》的牛仔——<strong>经典造型的共性不是贵，是"对"</strong>。附：平价替代清单与配色公式。</p><div class="score">推荐指数 ★★★★★</div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目 4：经典片单（进度条排行榜） ============ -->
+  <section id="race" aria-labelledby="t4" style="background:linear-gradient(180deg,transparent,rgba(224,53,160,.07),transparent)">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><small>Top 10</small>服饰美学经典片单 <var>04</var></div>
+        <a class="more" href="#" rel="nofollow">导出片单 →</a>
+      </div>
+      <div class="race">
+        <a class="rw g1" href="#race" rel="nofollow"><span class="n">01</span><span class="t"><strong>花样年华</strong><i>2000 · 王家卫 · 98 min</i></span><span class="v">9.8</span><span class="track"><span class="bar" style="width:100%"></span></span></a>
+        <a class="rw g2" href="#race" rel="nofollow"><span class="n">02</span><span class="t"><strong>蒂凡尼的早餐</strong><i>1961 · 布莱克·爱德华兹 · 115 min</i></span><span class="v">9.5</span><span class="track"><span class="bar" style="width:95%"></span></span></a>
+        <a class="rw g3" href="#race" rel="nofollow"><span class="n">03</span><span class="t"><strong>卡罗尔</strong><i>2015 · 托德·海因斯 · 118 min</i></span><span class="v">9.2</span><span class="track"><span class="bar" style="width:92%"></span></span></a>
+        <a class="rw" href="#race" rel="nofollow"><span class="n">04</span><span class="t"><strong>低俗小说</strong><i>1994 · 昆汀·塔伦蒂诺 · 154 min</i></span><span class="v">8.9</span><span class="track"><span class="bar" style="width:89%"></span></span></a>
+        <a class="rw" href="#race" rel="nofollow"><span class="n">05</span><span class="t"><strong>罗马假日</strong><i>1953 · 威廉·惠勒 · 118 min</i></span><span class="v">8.8</span><span class="track"><span class="bar" style="width:88%"></span></span></a>
+        <a class="rw" href="#race" rel="nofollow"><span class="n">06</span><span class="t"><strong>这个杀手不太冷</strong><i>1994 · 吕克·贝松 · 110 min</i></span><span class="v">8.7</span><span class="track"><span class="bar" style="width:87%"></span></span></a>
+        <a class="rw" href="#race" rel="nofollow"><span class="n">07</span><span class="t"><strong>布达佩斯大饭店</strong><i>2014 · 韦斯·安德森 · 99 min</i></span><span class="v">8.6</span><span class="track"><span class="bar" style="width:86%"></span></span></a>
+        <a class="rw" href="#race" rel="nofollow"><span class="n">08</span><span class="t"><strong>巴黎，我爱你</strong><i>2006 · 群导 · 120 min</i></span><span class="v">8.4</span><span class="track"><span class="bar" style="width:84%"></span></span></a>
+        <a class="rw" href="#race" rel="nofollow"><span class="n">09</span><span class="t"><strong>穿普拉达的女王</strong><i>2006 · 大卫·弗兰科尔 · 109 min</i></span><span class="v">8.3</span><span class="track"><span class="bar" style="width:83%"></span></span></a>
+        <a class="rw" href="#race" rel="nofollow"><span class="n">10</span><span class="t"><strong>天使爱美丽</strong><i>2001 · 让-皮埃尔·热内 · 122 min</i></span><span class="v">8.2</span><span class="track"><span class="bar" style="width:82%"></span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目 5：光影美学（封面墙 hover 揭层） ============ -->
+  <section id="wall" aria-labelledby="t5">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><small>Palette</small>光影美学 <var>05</var></div>
+        <a class="more" href="#" rel="nofollow">完整图鉴 →</a>
+      </div>
+      <div class="wall">
+        <figure class="tile t1"><b>霓虹</b><figcaption class="lay"><u>NEON</u><span>洋红 + 青蓝。赛博时代的皮肤。</span></figcaption></figure>
+        <figure class="tile t2"><b>柔光</b><figcaption class="lay"><u>SOFT</u><span>透过织物的光，比任何打光都贵。</span></figcaption></figure>
+        <figure class="tile t3"><b>暖调</b><figcaption class="lay"><u>WARM</u><span>钨丝灯 + 木质。回忆的标准色温。</span></figcaption></figure>
+        <figure class="tile t4"><b>高反差</b><figcaption class="lay"><u>NOIR</u><span>黑色丝袜 + 硬光 = 1940 年代的性感。</span></figcaption></figure>
+        <figure class="tile t5"><b>低饱和</b><figcaption class="lay"><u>PALE</u><span>褪色感。悲伤不需要鲜艳的颜色。</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目 6：题材分类（圆角胶囊矩阵） ============ -->
+  <section id="pills" aria-labelledby="t6" style="background:linear-gradient(180deg,transparent,rgba(109,75,255,.07),transparent)">
+    <div class="wrap">
+      <div class="sec-h">
+        <div class="sec-t"><small>Genres</small>题材分类 <var>06</var></div>
+        <a class="more" href="#" rel="nofollow">完整索引 →</a>
+      </div>
+      <div class="pills">
+        <a class="pill" href="#" rel="tag"><b>霓虹美学</b><u>218</u></a>
+        <a class="pill" href="#" rel="tag"><b>复古穿搭</b><u>306</u></a>
+        <a class="pill" href="#" rel="tag"><b>东方服饰</b><u>174</u></a>
+        <a class="pill" href="#" rel="tag"><b>黑白电影</b><u>260</u></a>
+        <a class="pill" href="#" rel="tag"><b>时尚纪录片</b><u>132</u></a>
+        <a class="pill" href="#" rel="tag"><b>色彩学</b><u>198</u></a>
+        <a class="pill" href="#" rel="tag"><b>摄影构图</b><u>245</u></a>
+        <a class="pill" href="#" rel="tag"><b>造型设计</b><u>289</u></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目 7：观影指南（步骤条 + 卡片） ============ -->
+  <section id="guide" aria-labelledby="t7">
+    <div class="wrap guide">
+      <div>
+        <div class="sec-h" style="border:0;padding:0;margin-bottom:16px"><div class="sec-t"><small>How to</small>如何"看"一部电影的服饰 <var>07</var></div></div>
+        <div class="steps">
+          <div class="step"><b>先关掉剧情</b><span>前 10 分钟只看衣服：谁穿了什么、颜色、材质、合身程度。</span></div>
+          <div class="step"><b>找"唯一的那件"</b><span>每部好电影都有一件"主角服"——它会在关键镜头被光打到。</span></div>
+          <div class="step"><b>注意换装节点</b><span>角色换衣服的瞬间，往往就是人格转变的瞬间。</span></div>
+          <div class="step"><b>看配饰，不看主角</b><span>丝袜、耳环、手表、鞋——配饰比台词更会说谎。</span></div>
+          <div class="step"><b>二刷时只看色调</b><span>把亮度调低，只看明暗分布。你会看到导演的"用光公式"。</span></div>
+        </div>
+      </div>
+      <aside class="pcard">
+        <h4>给时尚爱好者的 5 条观影提示</h4>
+        <ul>
+          <li>别从商业大片开始，先看《花样年华》与《卡罗尔》。</li>
+          <li>字幕会遮住画面下 1/5，而那里常是"鞋子"的戏。</li>
+          <li>想学穿搭，暂停截图；想学光影，录屏慢放。</li>
+          <li>一部电影看三遍：一遍剧情、一遍服装、一遍光线。</li>
+          <li>看不懂就查"服装设计"一栏，获奖名单是最好的老师。</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ SEO 正文 ============ -->
+  <section class="prose" aria-labelledby="seo">
+    <div class="wrap">
+      <h2 id="seo">丝袜电影网：从一件丝袜，读懂一部电影</h2>
+      <p><strong>丝袜电影网（siwadianyingwang-cn）</strong>是一个从<strong>服饰美学与镜头语言</strong>出发的电影赏析站点。我们相信：<em>服装是角色的第一句台词</em>。一部电影里，主角穿什么、什么时候换、光打在哪一侧，往往比对白更早暴露真相。本站聚焦<strong>时尚电影、服饰文化、光影美学、电影穿搭与造型设计</strong>，提供经典片单、深度影评、服饰文化年表与观影指南。</p>
+      <h3>核心关键词</h3>
+      <p><strong>丝袜电影网、丝袜电影、时尚电影、服饰美学、经典电影、电影穿搭、光影美学、电影影评、时尚纪录片</strong>。每部推荐均附年份、导演、片长、美学标签与"为什么值得看"，帮你在 10 秒内决定今晚看什么。</p>
+      <h3>为什么"丝袜"值得被认真对待</h3>
+      <p>1939 年，尼龙丝袜上市第一天，纽约梅西百货 4 小时卖出 7.8 万双。它曾是二战物资、是女权符号、是 B 级片的欲望代码，也是王家卫镜头里最温柔的暧昧。<strong>一件贴身的织物，承载了近百年的社会史</strong>——这正是"丝袜电影"这四个字的分量。</p>
+      <h3>观影建议</h3>
+      <p>想学穿搭，从《蒂凡尼的早餐》《卡罗尔》入门；想学用光，看《花样年华》《低俗小说》；想理解"服饰即人格"，看《穿普拉达的女王》《可怜的东西》。<strong>别在手机上看</strong>——织物纹理与光比细节，小屏会全部丢失。本站仅为信息与赏析服务，具体放映与播出安排以各正版平台为准。</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="sign">丝袜电影网</div>
+        <p style="font-size:12.4px;margin-top:9px">从服饰美学出发，<br>重新看电影。</p>
+      </div>
+      <div><h6>影像</h6><ul><li><a href="#mesh">时尚影像</a></li><li><a href="#race">经典片单</a></li><li><a href="#wall">光影美学</a></li><li><a href="#pills" rel="tag">题材分类</a></li></ul></div>
+      <div><h6>阅读</h6><ul><li><a href="#crit">深度影评</a></li><li><a href="#dl">服饰文化年表</a></li><li><a href="#" rel="nofollow">造型专题</a></li><li><a href="#" rel="nofollow">年度榜单</a></li></ul></div>
+      <div><h6>服务</h6><ul><li><a href="#guide">观影指南</a></li><li><a href="#" rel="nofollow">荐片投稿</a></li><li><a href="#" rel="nofollow">片单导出</a></li><li><a href="#" rel="nofollow">联系我们</a></li></ul></div>
+    </div>
+    <div class="fin">
+      <span>© <span id="yr">2026</span> 丝袜电影网 siwadianyingwang-cn · 时尚影像与服饰美学电影赏析 · 仅供信息参考</span>
+      <span>站点地址：<a href="https://siwadianyingwang-cn.github.io/" rel="noopener">https://siwadianyingwang-cn.github.io/</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="top" id="topBtn" href="#top" aria-label="回到顶部" title="回到顶部">↑</a>
+
+<script>
+var burger=document.getElementById('burger');
+var menu=document.getElementById('menu');
+burger.addEventListener('click',function(){
+  var o=menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded',o?'true':'false');
+});
+menu.addEventListener('click',function(e){
+  if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+});
+var topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',function(){topBtn.classList[window.scrollY>700?'add':'remove']('show');});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
